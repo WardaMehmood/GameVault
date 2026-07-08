@@ -10,13 +10,13 @@ import { useState } from "react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Game Tryx — Discover. Download. Play." },
+      { title: "Game Vault — Discover. Download. Play." },
       {
         name: "description",
         content:
           "Neon-lit indie game showcase. Discover, download and play games crafted by developers and students.",
       },
-      { property: "og:title", content: "Game Tryx — Indie Game Showcase" },
+      { property: "og:title", content: "Game Vault — Indie Game Showcase" },
       { property: "og:description", content: "A futuristic gaming launcher for indie creators." },
     ],
     links: [

@@ -11,7 +11,7 @@ export function Footer() {
         <div>
           <Logo />
           <p className="mt-4 max-w-sm text-sm text-muted-foreground">
-            Game Tryx is the neon-lit launcher for indie game creators. Discover, download, and play
+            Game Vault is the neon-lit launcher for indie game creators. Discover, download, and play
             games built by developers and students worldwide.
           </p>
         </div>
@@ -54,7 +54,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-primary/20 px-6 pt-6 text-xs text-muted-foreground md:flex-row">
-        <p>© {new Date().getFullYear()} Game Tryx. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Game Vault. All rights reserved.</p>
         <p>
           Crafted with{" "}
           <span className="text-accent" style={{ color: "oklch(0.7 0.32 340)" }}>

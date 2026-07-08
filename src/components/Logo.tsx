@@ -7,7 +7,7 @@ export function Logo({ className = "" }: { className?: string }) {
       <div className="relative">
         <img
           src={logoImg}
-          alt="Game Tryx"
+          alt="Game Vault"
           className="w-12 h-12 rounded-lg object-contain drop-shadow-[0_0_12px_oklch(0.55_0.28_305_/_0.75)] transition-transform duration-300 hover:scale-105"
         />
       </div>
@@ -15,7 +15,7 @@ export function Logo({ className = "" }: { className?: string }) {
         className="font-display text-xl font-black tracking-widest neon-text"
         style={{ fontFamily: "var(--font-display)" }}
       >
-        GAME TRYX
+        GAME VAULT
       </span>
     </div>
   );

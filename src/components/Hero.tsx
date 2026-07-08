@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { Search, ChevronDown } from "lucide-react";
+import { Search } from "lucide-react";
 import heroBg from "@/assets/hero-bg.png";
+import heroMobileBg from "@/assets/hero-mobile.png";
 import { CATEGORIES } from "@/data/games";
 
 export function Hero({
@@ -16,24 +17,32 @@ export function Hero({
 }) {
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
+      {/* Desktop Background PNG */}
       <img
         src={heroBg}
         alt="Hero Background"
-        className="absolute inset-0 h-full w-full object-cover object-center select-none pointer-events-none"
+        className="hidden md:block absolute inset-0 h-full w-full object-cover object-center select-none pointer-events-none"
+      />
+
+      {/* Mobile Background Image */}
+      <img
+        src={heroMobileBg}
+        alt="Hero Background Mobile"
+        className="block md:hidden absolute inset-0 h-full w-full object-cover object-center select-none pointer-events-none"
       />
 
       {/* overlay */}
       <div className="absolute inset-0 bg-black/30 -z-10" />
 
       {/* content over the image */}
-      <div className="relative z-10 flex h-full items-center justify-center">
+      <div className="relative z-10 flex h-full items-start pt-28 md:items-center md:pt-0 justify-center">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ type: "spring", stiffness: 60, damping: 15 }}
           className="mx-auto max-w-3xl text-center px-6"
         >
-          <h1 className="text-5xl font-black leading-[0.95] tracking-tight md:text-6xl lg:text-7xl text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.85)]">
+          <h1 className="text-3xl font-black leading-[0.95] tracking-tight min-[360px]:text-4xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_8px_30px_rgba(0,0,0,0.85)]">
             <span className="block neon-text">DISCOVER.</span>
             <span className="block neon-text">DOWNLOAD.</span>
             <span className="block neon-text">PLAY.</span>
@@ -61,16 +70,20 @@ export function Hero({
                   onChange={(e) => setSelectedCategory(e.target.value)}
                   className="flex-1 md:flex-none cursor-pointer rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-sm text-foreground outline-none transition focus:border-primary appearance-none"
                 >
-                  <option value="All" className="bg-background">All Categories</option>
+                  <option value="All" className="bg-background">
+                    All Categories
+                  </option>
                   {CATEGORIES.map((cat) => (
                     <option key={cat} value={cat} className="bg-background">
                       {cat}
                     </option>
                   ))}
                 </select>
-                <button 
+                <button
                   onClick={() => {
-                    document.getElementById('games-section')?.scrollIntoView({ behavior: 'smooth' });
+                    document
+                      .getElementById("games-section")
+                      ?.scrollIntoView({ behavior: "smooth" });
                   }}
                   className="rounded-xl bg-gradient-to-r from-primary to-accent px-6 py-3 text-sm font-semibold text-primary-foreground shadow-[0_0_12px_oklch(0.55_0.28_305_/_0.5)] transition hover:scale-105"
                 >
